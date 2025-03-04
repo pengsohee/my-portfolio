@@ -1,0 +1,92 @@
+/* app/page.module.css */
+
+.main {
+    /* Add any global main styles here if needed */
+  }
+  
+  .heroSection {
+    text-align: center;
+    padding: 50px 20px;
+  }
+  
+  .profileImage {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin: 20px auto;
+  }
+  
+  .viewProjectsButton {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #0070f3;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+  }
+  
+  .keySkillsSection {
+    padding: 20px 20px;
+    background-color: #f0f0f0;
+    color: #202020;
+  }
+  
+  .skillsContainer {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+  }
+  
+  .skillItem {
+    text-align: center;
+    margin: 20px;
+  }
+  
+  .skillImage {
+    height: 200px;
+    width: 200px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin: 20px auto;
+  }
+  
+  .featuredProjectsSection {
+    padding: 20px 20px;
+  }
+  
+  .projectsContainer {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+  }
+  
+  .projectItem {
+    width: 300px;
+    margin: 20px;
+    text-align: center;
+  }
+  
+  .projectImage {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin: 20px auto;
+  }
+  
+  .learnMoreLink {
+    margin-top: 10px;
+    display: inline-block;
+  }
+  
+  .aboutMeSection {
+    padding: 30px 20px;
+    background-color: #f0f0f0;
+    color: #202020;
+  }
+  
+  .contactSection {
+    padding: 30px 20px;
+  }
