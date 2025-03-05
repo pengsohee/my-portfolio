@@ -1,30 +1,70 @@
 .nav {
-    background-color: #f0f0f0;
-    padding: 15px 20px;
-  }
-  
-  .nav ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex; /* This is the key line! */
-  }
-  
-  .nav li {
-    margin-right: 20px;
-  }
-  
-  .nav li:last-child {
-    margin-right: 0;
-  }
-  
-  .nav a {
-    text-decoration: none;
-    color: #333;
-    font-weight: 500;
-    transition: color 0.3s ease;
-  }
-  
-  .nav a:hover {
-    color: #0070f3;
-  }
+  background-color: #333;
+  padding: 15px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navLeft,
+.navRight {
+  width: 100px; 
+}
+
+.navLinks {
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+  list-style: none; 
+  padding: 0;
+  margin: 0;
+}
+
+.navLinks ul { 
+  display: flex; 
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.navLinks li {
+  margin: 0  50px;
+}
+
+.navLinks li:first-child {
+  margin-left: 0;
+}
+
+.navLinks li:last-child {
+  margin-right: 0;
+}
+
+.nav a {
+  text-decoration: none;
+  color: #d1d1d1;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.nav a:hover {
+  color: #f0f0f0;
+}
+
+.socialIcons {
+  display: flex;
+  align-items: center;
+}
+
+.socialIcons a,
+.socialIcons button {
+  margin-left: 10px;
+  color: #d1d1d1;
+}
+
+.socialIcons a:first-child, .socialIcons button:first-child{
+    margin-left: 0;
+}
+
+.socialIcons a:hover, .socialIcons button:hover {
+  color: #f0f0f0;
+}

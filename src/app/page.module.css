@@ -2,11 +2,50 @@
 
 .main {
     /* Add any global main styles here if needed */
+    font-family: 'Noto Sans KR', sans-serif;
   }
+  /* .container{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .left_container{
+    display: flex;
+    margin: 20px;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .left_container_text h1{
+    font-size: 40px;
+    font-weight: bolder;
+  }
+
+  .left_container_text p{
+    font-size: normal;
+  }
+
+  .left_container_button {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #0070f3;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+  } */
   
   .heroSection {
     text-align: center;
     padding: 50px 20px;
+    background-color: #101010;
+  }
+
+  .heroSection h1 {
+    font-size: 40px;
+    font-weight: bold;
   }
   
   .profileImage {
@@ -54,6 +93,15 @@
   
   .featuredProjectsSection {
     padding: 20px 20px;
+    background-color: #f0f0f0;
+    color: #333;
+    font-weight: 500;
+  }
+
+  .featuredProjectsSection h2 {
+    text-align: center;
+    font-size: 30px;
+    font-weight: bold;
   }
   
   .projectsContainer {
@@ -63,9 +111,19 @@
   }
   
   .projectItem {
-    width: 300px;
+    width: 500px;
     margin: 20px;
     text-align: center;
+    font-weight: bold;
+  }
+
+  .projectItem p {
+    font-weight: bold;
+    font-size: 20px;
+  }
+
+  .projectItem a:hover{
+    color: #0070f3;
   }
   
   .projectImage {
@@ -88,5 +146,25 @@
   }
   
   .contactSection {
-    padding: 30px 20px;
+    display: flex;
+    padding: 20px 20px;
+    flex-direction: column;
+    background-color: #101010;
+  }
+
+  .contactSection h2 {
+    font-size: 18px;
+    /* font-weight: bold; */
+  }
+
+  .contactDetails {
+    display: flex;
+  }
+
+  .contactIcon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 10px;
+    margin-top: 5px;
   }

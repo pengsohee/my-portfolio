@@ -1,12 +1,75 @@
+'use client'
+
 import Link from 'next/link';
 import styles from './page.module.css'; // Import CSS module
+import React, { useState } from 'react';
+import { SiGmail } from 'react-icons/si';
+import { FaGithub, FaLinkedin } from 'react-icons/fa';
+
+interface CopyToClipboardIconProps {
+  textToCopy: string;
+}
+
+const CopyToClipboardIcon: React.FC<CopyToClipboardIconProps> = ({ textToCopy }) => {
+  const [isCopied, setIsCopied] = useState(false);
+
+  const handleCopyToClipboard = async () => {
+    try {
+      await navigator.clipboard.writeText(textToCopy);
+      setIsCopied(true);
+      setTimeout(() => setIsCopied(false), 2000);
+    } catch (err) {
+      console.error('Failed to copy text: ', err);
+    }
+  };
+
+  return (
+    <button
+      onClick={handleCopyToClipboard}
+      style={{
+        background: 'none',
+        border: 'none',
+        cursor: 'pointer',
+        display: 'flex',
+        alignItems: 'center',
+      }}
+    >
+      <SiGmail color={isCopied ? 'green' : 'inherit'} />
+      {isCopied && <span style={{ marginLeft: '5px', color: 'green'}}>Copied!</span>}
+    </button>
+  );
+};
 
 export default function Home() {
+  const emailToCopy = 'griventhags@gmail.com'
+  const githubUrl = 'https://github.com/pengsohee'
+  const linkedInUrl = 'https://www.linkedin.com/in/griventh-griffith-agustin-465ab82a4'
+
   return (
     <main className={styles.main}>
+      {/* <div className={styles.container}>
+        <div className={styles.left_container}>
+          <div className={styles.left_container_text}>
+            <h1>Griventh Griffith Agustin</h1>
+            <p>I'm a cybersecurity Undergraduate currently interning at PT Accelist Lentera Indonesia as an IT Cyber Security Analyst</p>
+          </div>
+          <div className={styles.left_container_btn}>
+            <a href="/projects" className={styles.viewProjectsButton}>
+              View my projects
+            </a>
+          </div>
+          
+        </div>
+        <div className={styles.right_container}>
+
+        </div>
+      </div> */}
+
+
+
       {/* Hero Section */}
       <section className={styles.heroSection}>
-        <h1>Fufu</h1>
+        <h1>Griventh Griffith Agustin</h1>
         <p>Saya nak main juga.</p>
         <img
           src="assets/atin.jpg"
@@ -18,7 +81,7 @@ export default function Home() {
         </Link>
       </section>
 
-      {/* Key Skills */}
+      {/* Key Skills
       <section className={styles.keySkillsSection}>
         <h2>Key Skills</h2>
         <div className={styles.skillsContainer}>
@@ -47,7 +110,7 @@ export default function Home() {
             <p>Python, Machine Learning</p>
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* Featured Projects */}
       <section className={styles.featuredProjectsSection}>
@@ -59,8 +122,7 @@ export default function Home() {
               alt="Project 1"
               className={styles.projectImage}
             />
-            <h3>Project 1</h3>
-            <p>Machine Learning Approach for DDoS Detection</p>
+            <p>DDoS Detection with Machine Learning</p>
             <Link href="/projects/project1" className={styles.learnMoreLink}>
               Learn More
             </Link>
@@ -71,7 +133,6 @@ export default function Home() {
               alt="Project 2"
               className={styles.projectImage}
             />
-            <h3>Project 2</h3>
             <p>Threat modelling for OURASTORE</p>
             <Link href="/projects/project2" className={styles.learnMoreLink}>
               Learn More
@@ -80,37 +141,29 @@ export default function Home() {
         </div>
       </section>
 
-      {/* About Me (Brief) */}
+      {/* About Me (Brief)
       <section className={styles.aboutMeSection}>
         <h2>About Me</h2>
         <p>A brief summary of your professional background and passion.</p>
         <Link href="/about" className={styles.learnMoreLink}>
           Read More
         </Link>
-      </section>
+      </section> */}
 
       {/* Contact Information */}
       <section className={styles.contactSection}>
-        <h2>Contact Me</h2>
-        <p>Feel free to reach out!</p>
-        <p>Email: griventhags@gmail.com</p>
-        <p>
-          <Link
-            href="https://linkedin.com/in/yourprofile"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            LinkedIn
-          </Link>{' '}
-          |{' '}
-          <Link
-            href="https://github.com/yourgithub"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            GitHub
-          </Link>
-        </p>
+        <h2>Feel free to reach out!</h2>
+        <div className={styles.contactDetails}>
+          <a className={styles.contactIcon}>
+            <CopyToClipboardIcon textToCopy={emailToCopy} />
+          </a>
+          <a href={githubUrl} target="_blank" rel="noopener noreferrer" className={styles.contactIcon}>
+            <FaGithub size={24} />
+          </a>
+          <a href={linkedInUrl} target="_blank" rel="noopener noreferrer" className={styles.contactIcon}>
+            <FaLinkedin size={24} />
+          </a>
+        </div>
       </section>
     </main>
   );
